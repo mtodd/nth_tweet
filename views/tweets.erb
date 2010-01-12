@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Nth Tweet</title>
+  </head>
+  <body>
+    <%= partial :header %>
+    <div id="body">
+      <%= partial :search %>
+      
+      <% if @error %>
+        <div id="error">
+          <p>
+            Oops! <%= @error %>
+          </p>
+        </div>
+      <% end %>
+      
+      <div id="results">
+        <% @tweets.each do |(index, tweet)| %>
+          <%= index %>
+          <%= partial :tweet, tweet %>
+        <% end %>
+      </div>
+      
+    </div>
+  </body>
+</html>

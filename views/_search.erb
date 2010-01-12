@@ -1,0 +1,16 @@
+<form action="/tweets" method="GET">
+  <input type="hidden" name="tracking" id="tracking" value="<%= params[:tracking] ||= rand %>" />
+  
+  <p>
+    <label for="username">Username</label>
+    <input type="text" name="username" id="username" value="<%= params[:username] %>" />
+  </p>
+  
+  <p>
+    <label for="n">N</label>
+    <input type="text" name="n" id="n" value="<%= params[:n] ||= 100 %>" disabled="disabled" />
+    We'll fetch every Nth tweet for you.
+  </p>
+  
+  <input type="submit" value="Fetch" />
+</form>
