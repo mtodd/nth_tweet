@@ -1,12 +1,12 @@
 <div class="tweet">
   <div class="avatar" style="float: left;">
-    <img src="<%= tweet['profile_image_url'] %>" />
+    <img src="<%= tweet['user']['profile_image_url'] %>" />
   </div>
   <div class="text">
     <p><%= tweet['text'] %></p>
   </div>
   <div class="meta">
-    <a href="http://twitter.com/<%= tweet['from_user'] %>/status/<%= tweet['id'] %>"><%= tweet['created_at'] %></a>
-    by <%= tweet['from_user'] %>
+    <a href="http://twitter.com/<%= tweet['user']['screen_name'] %>/status/<%= tweet['id'] %>"><%= tweet['created_at'] %></a>
+    by <a href="http://twitter.com/<%= tweet['user']['screen_name'] %>"><%= tweet['user']['screen_name'] %></a>
   </div>
 </div>
