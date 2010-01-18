@@ -1,7 +1,6 @@
 helpers do
   def get_tweets(username, results = [])
-    # MAX_RESULTS / REQUESTS_PER_PAGE
-    1.upto(3) do |page|
+    1.upto(MAX_RESULTS / REQUESTS_PER_PAGE) do |page|
       results.concat(Twitter.timeline(username, :page => page, :rpp => REQUESTS_PER_PAGE))
     end
     results
